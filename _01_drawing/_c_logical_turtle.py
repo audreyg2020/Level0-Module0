@@ -1,6 +1,17 @@
 import random
 import turtle
+    # 1. Make a new turtle
+the_turtle=turtle.Turtle()
+    # 2. Make your turtle's shape 'turtle', .shape('turtle')
+the_turtle.shape('turtle')
+    # 3. Set your turtle's color using .color('green') and .pencolor('blue')
+the_turtle.color('green')
+the_turtle.pencolor('blue')
+    # 4. Set and new width, length, and outline of our turtle
+the_turtle.turtlesize(stretch_wid=10, stretch_len=10, outline=4)
 
+    # 5. Uncomment the following line and replace 'my_turtle' with your turtle
+the_turtle.onclick('the_turtle')
 
 # Returns a random color!
 def get_random_color():
@@ -11,22 +22,24 @@ def get_random_color():
 
 def screen_clicked(x, y):
     print('You pressed: x=' + str(x) + ', y=' + str(y))
-    
-    # 6. Call the turtle .penup() method
-    
-    # 7. Move the turtle to a new location using .goto(x, y)
 
+    # 6. Call the turtle .penup() method
+the_turtle.penup()
+    # 7. Move the turtle to a new location using .goto(x, y)
+the_turtle.goto(100,100)
 
 def turtle_clicked(x, y):
     print('turtle clicked!')
     
     # 8. Make a for loop to run the next instructions 3 times
-        
+for x in range(3):
+    the_turtle.right(360)
+    the_turtle.color(get_random_color())
         # 9. Make the turtle spin 360 degrees using the .right() method
         
         # 10. Use the .color() method and getRandomColor() function to change
         # the color of the turtle,
-        # myTurtle.color(get_random_color())
+#myTurtle.color(get_random_color())
 
 
 if __name__ == '__main__':
@@ -34,17 +47,18 @@ if __name__ == '__main__':
     window.setup(width=0.75, height=0.8, startx=0, starty=0)
     
     # 1. Make a new turtle
-    
+    the_turtle=turtle.Turtle()
     # 2. Make your turtle's shape 'turtle', .shape('turtle')
-    
+    the_turtle.shape('turtle')
     # 3. Set your turtle's color using .color('green') and .pencolor('blue')
-    
+    the_turtle.color('green')
+    the_turtle.pencolor('blue')
     # 4. Set and new width, length, and outline of our turtle
-    #    my_turtle.turtlesize(stretch_wid=10, stretch_len=10, outline=4)
+the_turtle.turtlesize(stretch_wid=10, stretch_len=10, outline=4)
 
     # 5. Uncomment the following line and replace 'my_turtle' with your turtle
-    # my_turtle.onclick(turtle_clicked)
+the_turtle.onclick(turtle_clicked)
 
 # ===================== DO NOT EDIT THE CODE BELOW ============================
-    window.onclick(screen_clicked)
-    turtle.done()
+window.onclick(screen_clicked)
+turtle.done()
