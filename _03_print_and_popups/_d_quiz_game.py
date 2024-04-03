@@ -22,16 +22,25 @@ else:
     # MAKE MORE QUESTIONS. Ask more questions by repeating the above 
     #      // Option: Subtract a point from their score for a wrong answer
 question_2 = simpledialog.askstring(title = "Question #2", prompt = "What is my favorite color?")
-if question_2 == "blue":
+if str(question_2) == "blue":
     score = score + 1
 else:
     score = score - 1
 question_3 = simpledialog.askstring(title = "Question #3", prompt = "What is the best food?")
-if question_2 == "waffles":
+if str(question_3) == "waffles":
     score = score + 1
 else:
     score = score - 1
-
+question_4 = simpledialog.askstring(title = "Question 4", prompt = "What is the square root of 16?")
+if int(question_4) == 4:
+    score = score + 1
+else:
+    score = score - 1
+question_5 = simpledialog.askstring(title = "Question 5", prompt = "What is one thing you should do when you wake up and before you go to sleep?")
+if str(question_5) = "brush teeth":
+    score = score + 1
+else:
+    score = score - 1
     # After all the questions have been asked, tell the user their final score
 messagebox.showinfo(title = "Final Score", message = str(score))
     # remember to convert your variable to a string using the str() function 

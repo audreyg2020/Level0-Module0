@@ -22,7 +22,7 @@ class Eye:
         self.y = y
         self.radius = radius
         
-        self.eye.penup()
+       # self.eye.penup()
         
     def draw(self):
         self.eye.begin_fill()
@@ -40,14 +40,6 @@ def screen_clicked(x, y):
 def key_pressed():
     print('You pressed the space key')
     
-    # LASER BEAM.  This code will make your ellipse move down and to the right
-    # when you press the space bar. Run the program to test it.
-
-    # 10. Increment the x and y variables of the 2 eye variables by 5:
-    #     left_eye.x += 5
-    
-    # 11. Call the .draw() method for both eye variables.
-
 
 if __name__ == '__main__':
     window = turtle.Screen()
@@ -58,19 +50,20 @@ if __name__ == '__main__':
     #    c. Rename the image something short (e.g. cat.gif)
     #    d. Save the image to your computer's desktop
     #    e. Drag and drop the image into this python package
-    
+    cat_gif = "cat.gif"
     # 2. Call the set_background() function with your variable inside of the parenthesis
     #    for example, set_background(bg_image)
-
+    set_background(cat_gif)
     # 3. Make a new turtle
-
+    my_turtle = turtle.Turtle()
     # 4. Set the turtle color and pen color to red (or any color you want)
+    my_turtle.color('red', 'red')
     #    using .color('red', 'red')
 
     # 5. Set the turtle width to 0 so no outlines are drawn
-
+    my_turtle.width = 0
     # 6. Set the turtle speed to 0 (fastest)
-
+    my_turtle.speed = 0
     # 7. Run the program and click on one of the cat's eyes. 
     #    The x,y position of the eye will be printed at the bottom of your
     #    processing window.
@@ -80,14 +73,24 @@ if __name__ == '__main__':
     
     # 8. After you've found the x and y for the eyes create 2 eye variables
     #    and initialize them:
-    #    left_eye  = Eye(eye=my_turtle, x=-34, y=11, radius=30)
-    #    right_eye = Eye(eye=my_turtle, x=40, y=-5, radius=30)
+    left_eye = Eye(x=-16, y=14, radius=30)
+    right_eye = Eye(x=53, y=23, radius=30)
 
     # 9. Call the .draw() method on BOTH eye variables
+    left_eye.draw()
+    right_eye.draw()
+    # LASER BEAM.  This code will make your ellipse move down and to the right
+    # when you press the space bar. Run the program to test it.
 
+    # 10. Increment the x and y variables of the 2 eye variables by 5:
+    left_eye.x += 5
+    right_eye.x += 5
+    # 11. Call the .draw() method for both eye variables.
+    left_eye.draw()
+    right_eye.draw()
 
 # ===================== DO NOT EDIT THE CODE BELOW ============================
-    window.onclick(screen_clicked)
-    window.onkeypress(key_pressed, 'space')
-    window.listen()
-    turtle.done()
+window.onclick(screen_clicked)
+window.onkeypress(key_pressed, 'space')
+window.listen()
+turtle.done()
